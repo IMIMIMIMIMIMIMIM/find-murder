@@ -3,19 +3,17 @@ import styled from "styled-components";
 
 const Floor = () => {
   const navigate = useNavigate();
-  const door = () => {};
   const chooseFloor = (id) => {
     navigate("/room", {
       state: id,
     });
   };
   return (
-    <div>
-      <div></div>
+    <div style={{ backgroundColor: "#606060" }}>
       <ListDiv>
-        <DoorDiv onClick={() => chooseFloor()}></DoorDiv>
-        <DoorDiv onClick={() => chooseFloor()}></DoorDiv>
-        <DoorDiv onClick={() => chooseFloor()}></DoorDiv>
+        <FloorDiv onClick={() => chooseFloor()}>1F</FloorDiv>
+        <FloorDiv onClick={() => chooseFloor()}>2F</FloorDiv>
+        <FloorDiv onClick={() => chooseFloor()}>3F</FloorDiv>
       </ListDiv>
     </div>
   );
@@ -30,11 +28,15 @@ const ListDiv = styled.div`
   align-items: center;
   height: 100vh;
 `;
-const DoorDiv = styled.div`
+const FloorDiv = styled.div`
+  background-image: url("img/stairs.png");
   display: flex;
-  width: 20%;
-  height: 500px;
-  background-color: brown;
+  width: 512px;
+  height: 512px;
   align-items: center;
   cursor: pointer;
+  color: white;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
 `;

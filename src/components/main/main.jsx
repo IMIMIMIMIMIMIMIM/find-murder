@@ -35,6 +35,7 @@ const StartBtn = styled.button`
   font-size: 1.5rem;
   border-radius: 5px;
   border: 1px solid grey;
+  cursor: pointer;
   :hover {
     background-color: black;
     color: white;
