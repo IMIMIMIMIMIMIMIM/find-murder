@@ -9,11 +9,14 @@ const Building = () => {
     });
   };
   return (
-    <ListDiv>
-      <DoorDiv onClick={() => chooseBuilding(1)}></DoorDiv>
-      <DoorDiv onClick={() => chooseBuilding(2)}></DoorDiv>
-      <DoorDiv onClick={() => chooseBuilding(3)}></DoorDiv>
-    </ListDiv>
+    <div style={{ backgroundColor: "#909090" }}>
+      <ComImg src="/img/compass.png" />
+      <ListDiv>
+        <BuildingDiv onClick={() => chooseBuilding(1)}></BuildingDiv>
+        <BuildingDiv onClick={() => chooseBuilding(2)}></BuildingDiv>
+        <BuildingDiv onClick={() => chooseBuilding(3)}></BuildingDiv>
+      </ListDiv>
+    </div>
   );
 };
 
@@ -26,10 +29,15 @@ const ListDiv = styled.div`
   align-items: center;
   height: 100vh;
 `;
-const DoorDiv = styled.div`
+const BuildingDiv = styled.div`
   background-image: url("img/building.png");
   display: flex;
-  width: 28%;
+  width: 345px;
   height: 500px;
   cursor: pointer;
+`;
+
+const ComImg = styled.img`
+  width: 200px;
+  position: absolute;
 `;

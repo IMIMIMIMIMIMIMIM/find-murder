@@ -7,7 +7,7 @@ const Template = () => {
   return (
     <TemplateDiv>
       <Outlet></Outlet>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </TemplateDiv>
   );
 };
