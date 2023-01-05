@@ -1,25 +1,39 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Room = () => {
   const navigate = useNavigate();
-  const chooseRoom = (id) => {
-    navigate("/final", {
-      state: id,
+  const location = useLocation();
+  const b = location.state.build;
+  const f = location.state.floor;
+  console.log("건물: " + b, "층: " + f);
+  const chooseRoom = (r) => {
+    navigate("/finish", {
+      state: {
+        build: b,
+        floor: f,
+        room: r,
+      },
     });
   };
   return (
-    <div style={{ backgroundColor: "#202020" }}>
+    <MainDiv>
+      <HintH1>가장 마지막</HintH1>
       <ListDiv>
-        <DoorDiv onClick={() => chooseRoom()}></DoorDiv>
-        <DoorDiv onClick={() => chooseRoom()}></DoorDiv>
-        <DoorDiv onClick={() => chooseRoom()}></DoorDiv>
+        <DoorDiv onClick={() => chooseRoom(1)}></DoorDiv>
+        <DoorDiv onClick={() => chooseRoom(2)}></DoorDiv>
+        <DoorDiv onClick={() => chooseRoom(3)}></DoorDiv>
       </ListDiv>
-    </div>
+    </MainDiv>
   );
 };
 
 export default Room;
+
+const MainDiv = styled.div`
+  background-color: #202020;
+  height: 100vh;
+`;
 
 const ListDiv = styled.div`
   display: flex;
@@ -30,9 +44,18 @@ const ListDiv = styled.div`
 `;
 const DoorDiv = styled.div`
   background-image: url("img/door.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
   display: flex;
-  width: 315px;
+  width: 15%;
   height: 460px;
   align-items: center;
   cursor: pointer;
+`;
+
+const HintH1 = styled.h1`
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 `;

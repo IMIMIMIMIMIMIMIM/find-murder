@@ -1,25 +1,38 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Floor = () => {
   const navigate = useNavigate();
-  const chooseFloor = (id) => {
+  const location = useLocation();
+  const b = location.state.build;
+  console.log("건물: " + b);
+  const chooseFloor = (f) => {
     navigate("/room", {
-      state: id,
+      state: {
+        build: b,
+        floor: f,
+      },
     });
   };
+
   return (
-    <div style={{ backgroundColor: "#606060" }}>
+    <MainDiv>
+      <HintH1>높지도 낮지도 않은 곳</HintH1>
       <ListDiv>
-        <FloorDiv onClick={() => chooseFloor()}>1F</FloorDiv>
-        <FloorDiv onClick={() => chooseFloor()}>2F</FloorDiv>
-        <FloorDiv onClick={() => chooseFloor()}>3F</FloorDiv>
+        <FloorDiv onClick={() => chooseFloor(1)}>1F</FloorDiv>
+        <FloorDiv onClick={() => chooseFloor(2)}>2F</FloorDiv>
+        <FloorDiv onClick={() => chooseFloor(3)}>3F</FloorDiv>
       </ListDiv>
-    </div>
+    </MainDiv>
   );
 };
 
 export default Floor;
+
+const MainDiv = styled.div`
+  background-color: #606060;
+  height: 100vh;
+`;
 
 const ListDiv = styled.div`
   display: flex;
@@ -30,8 +43,10 @@ const ListDiv = styled.div`
 `;
 const FloorDiv = styled.div`
   background-image: url("img/stairs.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   display: flex;
-  width: 512px;
+  width: 25%;
   height: 512px;
   align-items: center;
   cursor: pointer;
@@ -39,4 +54,11 @@ const FloorDiv = styled.div`
   justify-content: center;
   font-size: 3rem;
   font-weight: bold;
+`;
+
+const HintH1 = styled.h1`
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 `;
