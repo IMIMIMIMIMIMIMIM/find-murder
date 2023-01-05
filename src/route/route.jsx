@@ -4,6 +4,7 @@ import Main from "../components/main/main";
 import Room from "../components/room/room";
 import Floor from "../components/floor/floor";
 import Building from "../components/building/building";
+import Finish from "../components/finish/finish";
 const MyRoute = () => {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ const MyRoute = () => {
           <Route path="/building" element={<Building></Building>}></Route>
           <Route path="/floor" element={<Floor></Floor>}></Route>
           <Route path="/room" element={<Room></Room>}></Route>
+          <Route path="/finish" element={<Finish></Finish>}></Route>
           {/* <Route path="/room" element={<Room></Room>}></Route> */}
         </Route>
       </Routes>
