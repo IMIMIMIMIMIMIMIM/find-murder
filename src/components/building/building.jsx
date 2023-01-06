@@ -3,15 +3,21 @@ import styled from "styled-components";
 
 const Building = () => {
   const navigate = useNavigate();
-  const chooseBuilding = (id) => {
-    navigate("/floor", {
-      state: { build: id },
-    });
+  const chooseBuilding = (b) => {
+    if (b === 2) {
+      navigate("/floor", {
+        state: { build: b },
+      });
+    } else {
+      navigate("/finish", {
+        state: { build: b },
+      });
+    }
   };
   return (
     <MainDiv>
       <ImgDiv>
-        <ImgTag src="/img/compass.png" />
+        <ComImg src="/img/compass.png" />
       </ImgDiv>
       <HintH1>해가 보이지 않는 곳</HintH1>
       <ListDiv>
@@ -36,16 +42,17 @@ const ListDiv = styled.div`
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  max-height: 500px;
-  height: 100%;
-  /* position: relative; */
+  height: auto;
+  min-height: 30rem;
 `;
 const BuildingDiv = styled.div`
   background-image: url("img/building.png");
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  width: 18%;
+  margin: 0 1rem 0 1rem;
+  width: 345px;
   height: auto;
   cursor: pointer;
 `;
@@ -56,7 +63,7 @@ const ImgDiv = styled.div`
   height: auto;
 `;
 
-const ImgTag = styled.img`
+const ComImg = styled.img`
   max-width: 100%;
   height: auto;
 `;

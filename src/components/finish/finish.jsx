@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Finish = () => {
@@ -8,27 +8,60 @@ const Finish = () => {
   const r = location.state.room;
   console.log("건물: " + b, "층: " + f, "방: " + r);
   const result = () => {
-    if (b === 2 && f === 2 && r === 3) {
-      return "성공";
-    } else {
+    if (b !== 2 || f !== 2 || r !== 3) {
       return "실패";
+    } else {
+      return "성공";
     }
   };
   console.log(result());
+  const navigate = useNavigate();
+
+  const ReStart = () => {
+    navigate("/");
+  };
 
   return (
-    <div>
-      <ResultDiv>{result()}</ResultDiv>
-    </div>
+    <MainDiv>
+      <ResultDiv>
+        {result()}
+        <ReBtn onClick={ReStart}>다시하기</ReBtn>
+      </ResultDiv>
+    </MainDiv>
   );
 };
 
 export default Finish;
 
+const MainDiv = styled.div`
+  background-color: black;
+  height: 100vh;
+`;
+
 const ResultDiv = styled.div`
   position: absolute;
+  display: flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
+  flex-direction: column;
+  color: white;
+`;
+
+const ReBtn = styled.button`
+  border: none;
+  cursor: pointer;
+  width: 8rem;
+  height: 3rem;
+  margin: auto;
+  margin-top: 2rem;
+  top: 10%;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  :hover {
+    color: red;
+  }
 `;
