@@ -43,7 +43,8 @@ const StartBtn = styled.button`
 `;
 
 const ImgTag = styled.img`
-  width: 400px;
+  width: 25rem;
+  height: auto;
   align-self: center;
   margin-top: 5%;
 `;

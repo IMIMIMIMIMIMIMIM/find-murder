@@ -38,17 +38,21 @@ const MainDiv = styled.div`
 const ListDiv = styled.div`
   display: flex;
   justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  min-height: 30rem;
 `;
 const DoorDiv = styled.div`
   background-image: url("img/door.png");
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  width: 15%;
-  height: 460px;
+  margin: 0 1rem 0 1rem;
+  width: 330px;
+  height: auto;
   align-items: center;
   cursor: pointer;
 `;

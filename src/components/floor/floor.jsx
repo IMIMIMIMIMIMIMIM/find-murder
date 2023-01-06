@@ -7,12 +7,18 @@ const Floor = () => {
   const b = location.state.build;
   console.log("건물: " + b);
   const chooseFloor = (f) => {
-    navigate("/room", {
-      state: {
-        build: b,
-        floor: f,
-      },
-    });
+    if (f === 2) {
+      navigate("/room", {
+        state: {
+          build: b,
+          floor: f,
+        },
+      });
+    } else {
+      navigate("/finish", {
+        state: { floor: f },
+      });
+    }
   };
 
   return (
@@ -37,17 +43,22 @@ const MainDiv = styled.div`
 const ListDiv = styled.div`
   display: flex;
   justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  height: 100vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  min-height: 30rem;
 `;
 const FloorDiv = styled.div`
   background-image: url("img/stairs.png");
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  width: 25%;
-  height: 512px;
+  margin: 0 1rem 0 1rem;
+  width: 480px;
+  min-width: 115px;
+  height: auto;
   align-items: center;
   cursor: pointer;
   color: white;
