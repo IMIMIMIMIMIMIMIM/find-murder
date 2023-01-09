@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Building = () => {
   const navigate = useNavigate();
   const chooseBuilding = (b) => {
-    if (b === 2) {
+    if (b === text) {
       navigate("/floor", {
         state: { build: b },
       });
@@ -14,12 +15,26 @@ const Building = () => {
       });
     }
   };
+
+  const hintList = ["첫번째 힌트", "두번째 힌트", "세번째 힌트"];
+  const firstAnswer = () => {
+    hintList[0] = 1;
+    hintList[1] = 2;
+    hintList[2] = 3;
+  };
+
+  const hintText = (array) => {
+    const random = Math.floor(Math.random() * hintList.length);
+    return array[random];
+  };
+  let text = hintText(hintList);
+  console.log(text);
   return (
     <MainDiv>
       <ImgDiv>
         <ComImg src="/img/compass.png" />
       </ImgDiv>
-      <HintH1>해가 보이지 않는 곳</HintH1>
+      <HintH1>{text}</HintH1>
       <ListDiv>
         <BuildingDiv onClick={() => chooseBuilding(1)}></BuildingDiv>
         <BuildingDiv onClick={() => chooseBuilding(2)}></BuildingDiv>
