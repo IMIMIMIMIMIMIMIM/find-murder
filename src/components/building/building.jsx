@@ -1,13 +1,12 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Building = () => {
   const navigate = useNavigate();
   const chooseBuilding = (b) => {
-    if (b === text) {
+    if (b === text.id) {
       navigate("/floor", {
-        state: { build: b },
+        state: { build: b, btext: text.id },
       });
     } else {
       navigate("/finish", {
@@ -16,13 +15,21 @@ const Building = () => {
     }
   };
 
-  const hintList = ["첫번째 힌트", "두번째 힌트", "세번째 힌트"];
-  const firstAnswer = () => {
-    hintList[0] = 1;
-    hintList[1] = 2;
-    hintList[2] = 3;
-  };
-
+  const hintList = [
+    {
+      id: 1,
+      hint: "첫번째 힌트 정답 1번",
+    },
+    {
+      id: 2,
+      hint: "두번째 힌트 정답 2번",
+    },
+    {
+      id: 3,
+      hint: "세번째 힌트 정답 3번",
+    },
+  ];
+  console.log(hintList[0].id);
   const hintText = (array) => {
     const random = Math.floor(Math.random() * hintList.length);
     return array[random];
@@ -34,7 +41,7 @@ const Building = () => {
       <ImgDiv>
         <ComImg src="/img/compass.png" />
       </ImgDiv>
-      <HintH1>{text}</HintH1>
+      <HintH1>{text.hint}</HintH1>
       <ListDiv>
         <BuildingDiv onClick={() => chooseBuilding(1)}></BuildingDiv>
         <BuildingDiv onClick={() => chooseBuilding(2)}></BuildingDiv>

@@ -6,9 +6,13 @@ const Finish = () => {
   const b = location.state.build;
   const f = location.state.floor;
   const r = location.state.room;
+  const btext = location.state.btext;
+  const ftext = location.state.ftext;
+  const rtext = location.state.rtext;
+
   console.log("건물: " + b, "층: " + f, "방: " + r);
   const result = () => {
-    if (b !== 2 || f !== 2 || r !== 3) {
+    if (b !== btext || f !== ftext || r !== rtext) {
       return "실패";
     } else {
       return "성공";
