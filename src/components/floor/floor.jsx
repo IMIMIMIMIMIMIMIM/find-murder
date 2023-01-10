@@ -5,13 +5,16 @@ const Floor = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const b = location.state.build;
+  const btext = location.state.btext;
   console.log("건물: " + b);
   const chooseFloor = (f) => {
-    if (f === 2) {
+    if (f === text.id) {
       navigate("/room", {
         state: {
           build: b,
           floor: f,
+          btext: btext,
+          ftext: text.id,
         },
       });
     } else {
@@ -20,10 +23,31 @@ const Floor = () => {
       });
     }
   };
+  const hintList = [
+    {
+      id: 1,
+      hint: "첫번째 힌트 정답 1번",
+    },
+    {
+      id: 2,
+      hint: "두번째 힌트 정답 2번",
+    },
+    {
+      id: 3,
+      hint: "세번째 힌트 정답 3번",
+    },
+  ];
+  console.log(hintList[0].id);
+  const hintText = (array) => {
+    const random = Math.floor(Math.random() * hintList.length);
+    return array[random];
+  };
+  let text = hintText(hintList);
+  console.log(text);
 
   return (
     <MainDiv>
-      <HintH1>높지도 낮지도 않은 곳</HintH1>
+      <HintH1>{text.hint}</HintH1>
       <ListDiv>
         <FloorDiv onClick={() => chooseFloor(1)}>1F</FloorDiv>
         <FloorDiv onClick={() => chooseFloor(2)}>2F</FloorDiv>
