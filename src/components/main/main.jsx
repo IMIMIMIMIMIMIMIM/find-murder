@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,11 +7,45 @@ const Main = () => {
   const start = () => {
     navigate("/building");
   };
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+  };
   return (
     <MainDiv>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <ImgTag src="/img/murder.png" />
         <StartBtn onClick={start}>시작하기</StartBtn>
+        <ModalBtn onClick={openModal}>How to</ModalBtn>
+        {modal ? (
+          <Background onClick={closeModal}>
+            <Modal onClick={(e) => e.stopPropagation()}>
+              <div>
+                <h2>Find Murder</h2>
+                <h4>1. 주어진 단서로 살인자를 위치를 찾아내야 합니다.</h4>
+                <br></br>
+                <h4>2. 각 장소마다 맞는 곳을 찾아야 합니다.</h4>
+                <br></br>
+                <h4>3. 한 번이라도 틀릴 경우 실패합니다.</h4>
+                <br></br>
+                <h4>4. 살인자의 위치는 매 게임마다 변경됩니다.</h4>
+
+                <br></br>
+                <h4>
+                  5. 실패할 경우 새로운 게임으로 처음부터 다시 시작합니다.
+                </h4>
+                <p style={{ fontWeight: "bold" }}>Good Luck</p>
+              </div>
+              <CloseBtn
+                className="xi-close-min xi-2x"
+                onClick={closeModal}
+              ></CloseBtn>
+            </Modal>
+          </Background>
+        ) : null}
       </div>
     </MainDiv>
   );
@@ -34,7 +69,7 @@ const StartBtn = styled.button`
   height: 50px;
   font-size: 1.5rem;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: none;
   cursor: pointer;
   :hover {
     background-color: black;
@@ -47,4 +82,57 @@ const ImgTag = styled.img`
   height: auto;
   align-self: center;
   margin-top: 5%;
+`;
+
+const ModalBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 4rem;
+  height: 2rem;
+  right: 0;
+  margin: 2rem 2rem 0 0;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  :hover {
+    background-color: black;
+    color: white;
+  }
+`;
+
+const Modal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30rem;
+  height: 50%;
+  padding: 16px;
+  background: #7a7a7a;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px;
+`;
+
+const Background = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+`;
+
+const CloseBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
 `;
