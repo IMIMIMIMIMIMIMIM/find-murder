@@ -36,6 +36,14 @@ const Floor = () => {
       id: 3,
       hint: "세번째 힌트 정답 3번",
     },
+    {
+      id: 1,
+      hint: "네번째 힌트 정답 1번",
+    },
+    {
+      id: 2,
+      hint: "다섯번째 힌트 정답 2번",
+    },
   ];
   console.log(hintList[0].id);
   const hintText = (array) => {
