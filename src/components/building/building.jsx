@@ -18,23 +18,23 @@ const Building = () => {
   const hintList = [
     {
       id: 1,
-      hint: "첫번째 힌트 정답 1번",
+      hint: "시간이 가장 느리게 가는 곳",
     },
     {
       id: 2,
-      hint: "두번째 힌트 정답 2번",
+      hint: "빛이 들지 않는 곳",
     },
     {
       id: 3,
-      hint: "세번째 힌트 정답 3번",
+      hint: "하루가 가장 빨리 시작되는 곳",
     },
     {
       id: 1,
-      hint: "네번째 힌트 정답 1번",
+      hint: "달이 지는 곳",
     },
     {
       id: 2,
-      hint: "다섯번째 힌트 정답 2번",
+      hint: "시작과 끝이 공존하는 곳",
     },
   ];
   console.log(hintList[0].id);

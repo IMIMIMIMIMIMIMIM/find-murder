@@ -24,20 +24,18 @@ const Main = () => {
           <Background onClick={closeModal}>
             <Modal onClick={(e) => e.stopPropagation()}>
               <div>
-                <h2>Find Murder</h2>
-                <h4>1. 주어진 단서로 살인자를 위치를 찾아내야 합니다.</h4>
+                <h2 style={{ fontStyle: "italic" }}>Find Murder</h2>
+                <Ex>1. 주어진 단서로 살인자를 위치를 찾아내야 합니다.</Ex>
                 <br></br>
-                <h4>2. 각 장소마다 맞는 곳을 찾아야 합니다.</h4>
+                <Ex>2. 한 번이라도 틀릴 경우 실패합니다.</Ex>
                 <br></br>
-                <h4>3. 한 번이라도 틀릴 경우 실패합니다.</h4>
+                <Ex>3. 살인자의 위치는 매 게임마다 변경됩니다.</Ex>
                 <br></br>
-                <h4>4. 살인자의 위치는 매 게임마다 변경됩니다.</h4>
-
+                <Ex>
+                  4. 실패할 경우 새로운 게임으로 처음부터 다시 시작합니다.
+                </Ex>
                 <br></br>
-                <h4>
-                  5. 실패할 경우 새로운 게임으로 처음부터 다시 시작합니다.
-                </h4>
-                <p style={{ fontWeight: "bold" }}>Good Luck</p>
+                <Ex fontWeight="bold">Good Luck</Ex>
               </div>
               <CloseBtn
                 className="xi-close-min xi-2x"
@@ -135,4 +133,8 @@ const CloseBtn = styled.button`
   right: 0.5rem;
   top: 0.5rem;
   cursor: pointer;
+`;
+
+const Ex = styled.h4`
+  font-style: italic;
 `;
