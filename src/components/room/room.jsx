@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
+import Hint from "../hint/hint";
 
 const Room = () => {
   const navigate = useNavigate();
@@ -24,23 +26,23 @@ const Room = () => {
   const hintList = [
     {
       id: 1,
-      hint: "첫번째 힌트 정답 1번",
+      hint: "무지개가 시작되는 곳",
     },
     {
       id: 2,
-      hint: "두번째 힌트 정답 2번",
+      hint: "봄 기운이 완연한 곳",
     },
     {
       id: 3,
-      hint: "세번째 힌트 정답 3번",
+      hint: "모든 것을 삼키는 곳",
     },
     {
       id: 1,
-      hint: "네번째 힌트 정답 1번",
+      hint: "가장 붐비는 곳",
     },
     {
       id: 2,
-      hint: "다섯번째 힌트 정답 2번",
+      hint: "가장 안전한 곳",
     },
   ];
   console.log(hintList[0].id);
@@ -54,9 +56,18 @@ const Room = () => {
     <MainDiv>
       <HintH1>{text.hint}</HintH1>
       <ListDiv>
-        <DoorDiv onClick={() => chooseRoom(1)}></DoorDiv>
-        <DoorDiv onClick={() => chooseRoom(2)}></DoorDiv>
-        <DoorDiv onClick={() => chooseRoom(3)}></DoorDiv>
+        <DoorDiv
+          bgImage="url(img/reddoor.png)"
+          onClick={() => chooseRoom(1)}
+        ></DoorDiv>
+        <DoorDiv
+          bgImage="url(img/greendoor.png)"
+          onClick={() => chooseRoom(2)}
+        ></DoorDiv>
+        <DoorDiv
+          bgImage="url(img/bluedoor.png)"
+          onClick={() => chooseRoom(3)}
+        ></DoorDiv>
       </ListDiv>
     </MainDiv>
   );
@@ -79,7 +90,7 @@ const ListDiv = styled.div`
   min-height: 30rem;
 `;
 const DoorDiv = styled.div`
-  background-image: url("img/door.png");
+  background-image: ${(props) => props.bgImage};
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

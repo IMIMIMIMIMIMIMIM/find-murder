@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Hint from "../hint/hint";
 
 const Floor = () => {
   const navigate = useNavigate();
@@ -26,23 +27,23 @@ const Floor = () => {
   const hintList = [
     {
       id: 1,
-      hint: "첫번째 힌트 정답 1번",
+      hint: "눈이 마주치는 곳",
     },
     {
       id: 2,
-      hint: "두번째 힌트 정답 2번",
+      hint: "가장 시끄러운 곳",
     },
     {
       id: 3,
-      hint: "세번째 힌트 정답 3번",
+      hint: "가장 멀리 보이는 곳",
     },
     {
       id: 1,
-      hint: "네번째 힌트 정답 1번",
+      hint: "가장 추운 곳",
     },
     {
       id: 2,
-      hint: "다섯번째 힌트 정답 2번",
+      hint: "높지도 낮지도 않은 곳",
     },
   ];
   console.log(hintList[0].id);
