@@ -1,5 +1,5 @@
 <p align="center">
-## <strong> Find Murder
+<h2> <strong> Find Murder </h2>
 </p>
 
 # <strong>소개
