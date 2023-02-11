@@ -1,5 +1,5 @@
 <p align="center">
-## <stromg> Find Murder
+## <strong> Find Murder
 </p>
 
 # <strong>소개
