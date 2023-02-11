@@ -1,8 +1,8 @@
 <p align="center">
-<h2> <strong> Find Murder </h2>
+<h2> Find Murder </h2>
 </p>
 
-# <strong>소개
+# 소개
  Find Murder는 주어진 단서를 통해 살인자를 찾는 게임입니다. <br/>
  게임은 총 3단계로 구성되어 있으며 매 게임마다 살인자의 위치는 변경됩니다.<br/>
  Find Murder를 통해 자신의 추리력을 입증해보세요!<br/>
