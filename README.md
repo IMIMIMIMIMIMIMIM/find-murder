@@ -1,4 +1,6 @@
-https://www.notion.so/Find-murder-919db29b63634b1f86fdbacb53ee885c
+<p align="center">
+ Find Murder
+</p>
 
 # <strong>소개
 <a href="https:www.notion.so/Find-murder-919db29b63634b1f86fdbacb53ee885c"><img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white&link=https://balanced-desk-3a4.notion.site/EYAGI-06e6113484324fe8ba37ec83e5e70b8d/"/>
