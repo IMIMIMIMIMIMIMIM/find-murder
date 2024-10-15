@@ -58,7 +58,7 @@ const MainDiv = styled.div`
 `;
 
 const StartBtn = styled.button`
-  top: 75%;
+  top: 85%;
   left: 50%;
   position: absolute;
   background-color: white;
@@ -79,7 +79,7 @@ const ImgTag = styled.img`
   width: 25rem;
   height: auto;
   align-self: center;
-  margin-top: 5%;
+  margin-top: 1rem;
 `;
 
 const ModalBtn = styled.button`
@@ -107,7 +107,7 @@ const Modal = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 30rem;
-  height: 50%;
+  height: auto;
   padding: 16px;
   background: #7a7a7a;
   border-radius: 10px;
