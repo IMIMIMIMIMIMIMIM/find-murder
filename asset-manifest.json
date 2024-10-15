@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/find-murder/static/css/main.87c5a10e.css",
-    "main.js": "/find-murder/static/js/main.cc5c30c9.js",
+    "main.js": "/find-murder/static/js/main.8a9bdf2c.js",
     "static/media/Galmuri14.ttf": "/find-murder/static/media/Galmuri14.05cb1a7cc869ddc9d6f6.ttf",
     "index.html": "/find-murder/index.html",
     "main.87c5a10e.css.map": "/find-murder/static/css/main.87c5a10e.css.map",
-    "main.cc5c30c9.js.map": "/find-murder/static/js/main.cc5c30c9.js.map"
+    "main.8a9bdf2c.js.map": "/find-murder/static/js/main.8a9bdf2c.js.map"
   },
   "entrypoints": [
     "static/css/main.87c5a10e.css",
-    "static/js/main.cc5c30c9.js"
+    "static/js/main.8a9bdf2c.js"
   ]
 }
