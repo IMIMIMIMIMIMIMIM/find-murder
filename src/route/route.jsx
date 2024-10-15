@@ -7,7 +7,7 @@ import Building from "../components/building/building";
 import Finish from "../components/finish/finish";
 const MyRoute = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/find-murder">
       <Routes>
         <Route element={<Template></Template>}>
           <Route path="" element={<Main></Main>}></Route>
@@ -15,7 +15,6 @@ const MyRoute = () => {
           <Route path="/floor" element={<Floor></Floor>}></Route>
           <Route path="/room" element={<Room></Room>}></Route>
           <Route path="/finish" element={<Finish></Finish>}></Route>
-          {/* <Route path="/room" element={<Room></Room>}></Route> */}
         </Route>
       </Routes>
     </BrowserRouter>

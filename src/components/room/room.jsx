@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
-import Hint from "../hint/hint";
 
 const Room = () => {
   const navigate = useNavigate();

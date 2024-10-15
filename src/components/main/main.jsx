@@ -17,7 +17,7 @@ const Main = () => {
   return (
     <MainDiv>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <ImgTag src="/img/murder.png" />
+        <ImgTag src={`${process.env.PUBLIC_URL}/img/murder.png`} />
         <StartBtn onClick={start}>시작하기</StartBtn>
         <ModalBtn onClick={openModal}>How to</ModalBtn>
         {modal ? (

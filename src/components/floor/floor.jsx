@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Hint from "../hint/hint";
 
 const Floor = () => {
   const navigate = useNavigate();

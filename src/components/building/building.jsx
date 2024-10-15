@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Hint from "../hint/hint";
 
 const Building = () => {
   const navigate = useNavigate();
@@ -48,7 +47,7 @@ const Building = () => {
   return (
     <MainDiv>
       <ImgDiv>
-        <ComImg src="/img/compass.png" />
+        <ComImg src={`${process.env.PUBLIC_URL}/img/compass.png`} />
       </ImgDiv>
       <HintH1>{text.hint}</HintH1>
       <ListDiv>

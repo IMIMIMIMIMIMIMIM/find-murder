@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import Footer from "./footer/footer";
 import "../font/font.css";
 
 const Template = () => {
   return (
     <TemplateDiv>
       <Outlet></Outlet>
-      {/* <Footer></Footer> */}
     </TemplateDiv>
   );
 };
