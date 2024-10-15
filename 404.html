@@ -6,11 +6,16 @@
     <title>Redirecting...</title>
     <script>
       (function () {
-        var redirect = window.location.pathname;
-        window.location.href =
-          window.location.origin + "/find-murder" + redirect;
+        let currentPath = window.location.pathname;
+
+        if (!currentPath.startsWith("/find-murder/")) {
+          let newUrl = window.location.origin + "/find-murder" + currentPath;
+          window.location.replace(newUrl);
+        }
       })();
     </script>
   </head>
-  <body></body>
+  <body>
+    Redirecting...
+  </body>
 </html>
