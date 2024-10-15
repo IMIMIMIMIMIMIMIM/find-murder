@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="refresh"
+      content="0; URL='https://imimimimimimimim.github.io/find-murder/#/'"
+    />
     <title>Redirecting...</title>
     <script>
-      (function () {
-        let currentPath = window.location.pathname;
-
-        if (!currentPath.startsWith("/find-murder/")) {
-          let newUrl = window.location.origin + "/find-murder" + currentPath;
-          window.location.replace(newUrl);
-        }
-      })();
+      const redirectPath = window.location.pathname.replace(/\/$/, "");
+      if (redirectPath !== "") {
+        window.location.replace(
+          `https://imimimimimimimim.github.io/find-murder/#${redirectPath}`
+        );
+      }
     </script>
   </head>
   <body>
