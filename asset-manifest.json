@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e7dfa849.css",
+    "main.js": "/static/js/main.8cf5d17d.js",
+    "static/media/Galmuri14.ttf": "/static/media/Galmuri14.05cb1a7cc869ddc9d6f6.ttf",
+    "index.html": "/index.html",
+    "main.e7dfa849.css.map": "/static/css/main.e7dfa849.css.map",
+    "main.8cf5d17d.js.map": "/static/js/main.8cf5d17d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7dfa849.css",
+    "static/js/main.8cf5d17d.js"
+  ]
+}
